@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import '@src/index.css';
+import RoomsApp from '@src/RoomsApp';
+import reportWebVitals from '@src/reportWebVitals';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const clientId = '634125290496-ptbkhdj2pj6hjf8bqhe3as02goai2isu.apps.googleusercontent.com';
 root.render(
   <React.StrictMode>
-    <App />
+    <GoogleOAuthProvider clientId={clientId}>
+      <RoomsApp />
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
 
